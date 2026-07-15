@@ -1,0 +1,31 @@
+/* Jost Font - Must be first */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+
+@import './styling/theme.css';
+@import './styling/tailwind.css';
+
+/* Global font family */
+body {
+  font-family: 'Jost', sans-serif;
+}
+
+/* Custom animations */
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #000000;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
