@@ -22,7 +22,13 @@ function AboutSection() {
 
           {/* Avatar */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-[530px] h-[530px] rounded-full border border-white bg-gray-700" />
+            <div className="w-[530px] h-[530px] rounded-full border border-white bg-gray-700" >
+              <img 
+                src="https://res.cloudinary.com/dcoilkm8r/image/upload/v1784234458/SK_avatar_xlnmhz.png" 
+                alt="Avatar" 
+                className="w-full h-full rounded-full" 
+              />
+            </div>
           </div>
         </div>
       </div>
