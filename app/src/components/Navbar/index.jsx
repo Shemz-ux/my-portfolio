@@ -15,9 +15,13 @@ function Navbar() {
           {/* Logo - Centered */}
           <Link 
             to="/" 
-            className="absolute left-1/2 -translate-x-1/2 text-p2 text-black tracking-wide hover:opacity-60 transition-opacity"
+            className="absolute left-1/2 -translate-x-1/2 hover:opacity-60 transition-opacity"
           >
-            {navConfig.brandName}
+            <img 
+              src="https://res.cloudinary.com/dcoilkm8r/image/upload/v1784236694/SK_Designz_Logo_qj8bfb.png" 
+              alt="SK Designz Logo" 
+              className="h-38"
+            />
           </Link>
 
           {/* Hamburger Menu */}
