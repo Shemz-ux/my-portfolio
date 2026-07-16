@@ -11,7 +11,10 @@ export const footerConfig = {
     email: 'SDSTUDIOS.CO.UK@GMAIL.COM',
     timezone: 'TIME ZONE - GMT',
     location: 'LONDON',
-    social: ['INSTAGRAM', 'LINKEDIN'],
+    social: [
+      { label: 'INSTAGRAM', url: 'https://instagram.com' },
+      { label: 'LINKEDIN', url: 'https://linkedin.com' },
+    ],
   },
   backToTopLabel: '[BACK TO TOP]',
 };
