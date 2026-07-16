@@ -2,39 +2,34 @@ function Hero() {
   const currentTime = new Date().toLocaleTimeString('en-GB');
 
   return (
-    <section className="relative bg-[#f3f3f3] py-8 px-8">
+    <section className="relative bg-[#f3f3f3] py-6 px-8">
       <div className="max-w-[1728px] mx-auto">
-        {/* Top Info */}
-        <div className="flex justify-between items-start mb-32">
-          <div>
-            <p className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase">
-              [ SOFTWARE DEVELOPER ]
+        {/* Main Heading */}
+        <div className="relative mt-90">
+          <div className="mb-4">
+            <p className="text-p2 text-black text-left uppercase">
+              [ SOFTWARE ENGINEER ]
             </p>
-            <div className="mt-64">
-              <p className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase">
+          </div>
+          <h1 className="text-black uppercase font-light leading-normal whitespace-nowrap">
+            DEVELOPING EXPERIENCES
+          </h1>
+          <h1 className="text-black uppercase font-light leading-normal pl-[356px] -mt-4">
+            CREATING WITH VISION
+          </h1>
+          <div className="mt-6 flex gap-8 items-center">
+              <p className="text-p2 text-black uppercase">
                 SHEM K. N
               </p>
-              <p className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase">
-                {currentTime} BST
+              <p className="text-p2 text-black uppercase">
+                {currentTime} GMT
               </p>
             </div>
-          </div>
-          
           <div>
-            <p className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black text-right uppercase">
+            <p className="text-p2 text-black text-right uppercase">
               [ DIGITAL DESIGNER ]
             </p>
           </div>
-        </div>
-
-        {/* Main Heading */}
-        <div className="space-y-2">
-          <h1 className="font-['Jost'] font-light text-[clamp(3rem,8vw,8rem)] leading-none text-black uppercase">
-            DEVELOPING EXPERIENCES
-          </h1>
-          <h1 className="font-['Jost'] font-light text-[clamp(3rem,8vw,8rem)] leading-none text-black uppercase pl-[clamp(2rem,20vw,21.25rem)]">
-            CREATING WITH VISION
-          </h1>
         </div>
       </div>
     </section>
