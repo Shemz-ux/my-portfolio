@@ -2,7 +2,7 @@ function AboutSection() {
   return (
     <section className="bg-black py-24 px-8">
       <div className="max-w-[1728px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Bio Text */}
           <div className="text-h4 text-white leading-normal uppercase">
             <p className="mb-4">HI,</p>
@@ -22,7 +22,7 @@ function AboutSection() {
 
           {/* Avatar */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-[613px] h-[613px] rounded-full border border-white bg-gray-700" />
+            <div className="w-[530px] h-[530px] rounded-full border border-white bg-gray-700" />
           </div>
         </div>
       </div>
