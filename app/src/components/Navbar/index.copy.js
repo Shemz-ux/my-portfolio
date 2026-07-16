@@ -5,7 +5,7 @@ export const navConfig = {
     { label: 'WORK', href: '/work' },
     { label: 'CONTACT', href: '/contact' },
   ],
-  brandName: 'SK STUDIOS',
+  brandName: 'SD STUDIOS',
   contactInfo: {
     email: 'SDSTUDIOS.CO.UK@GMAIL.COM',
     timezone: 'TIME ZONE - GMT',

@@ -4,7 +4,7 @@ function AboutSection() {
       <div className="max-w-[1728px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Bio Text */}
-          <div className="font-['Jost'] font-extralight text-[clamp(1.5rem,3vw,3rem)] text-white leading-normal uppercase">
+          <div className="text-h4 text-white leading-normal uppercase">
             <p className="mb-4">HI,</p>
             <p className="mb-4">
               "MY NAME IS SHEM THE

@@ -35,10 +35,10 @@ function Work() {
         {/* Header Section */}
         <div className="flex items-center justify-between mb-16">
           <div className="flex items-baseline gap-8">
-            <h1 className="font-['Jost'] font-light text-[clamp(3rem,6vw,5.3125rem)] leading-none text-black uppercase">
+            <h2 className="text-black uppercase">
               MY WORK
-            </h1>
-            <span className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase">
+            </h2>
+            <span className="text-p2 text-black uppercase">
               [ WEBSITES ]
             </span>
           </div>
@@ -71,13 +71,13 @@ function Work() {
 
               {/* Project Info */}
               <div>
-                <h2 className="font-['Jost'] font-light text-[clamp(2rem,4vw,4rem)] leading-none text-black uppercase mb-2">
+                <h3 className="text-black uppercase mb-2">
                   {project.title}
-                </h2>
-                <p className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase mb-1">
+                </h3>
+                <p className="text-p2 text-black uppercase mb-1">
                   {project.tech}
                 </p>
-                <p className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase">
+                <p className="text-p2 text-black uppercase">
                   {project.description}
                 </p>
               </div>

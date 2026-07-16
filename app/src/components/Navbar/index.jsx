@@ -15,7 +15,7 @@ function Navbar() {
           {/* Logo - Centered */}
           <Link 
             to="/" 
-            className="absolute left-1/2 -translate-x-1/2 font-['Jost'] font-light text-[clamp(1rem,2vw,1.25rem)] text-black tracking-wide hover:opacity-60 transition-opacity"
+            className="absolute left-1/2 -translate-x-1/2 text-p2 text-black tracking-wide hover:opacity-60 transition-opacity"
           >
             {navConfig.brandName}
           </Link>
@@ -50,7 +50,7 @@ function Navbar() {
                 key={link.href}
                 to={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`font-['Jost'] font-light text-[clamp(3rem,8vw,4rem)] leading-none text-white hover:opacity-60 transition-opacity uppercase tracking-wide ${
+                className={`text-h2 text-white hover:opacity-60 transition-opacity uppercase tracking-wide ${
                   location.pathname === link.href ? 'opacity-100' : 'opacity-80'
                 }`}
               >
@@ -60,7 +60,7 @@ function Navbar() {
           </nav>
 
           {/* Contact Info in Overlay */}
-          <div className="absolute bottom-16 left-16 font-['Jost'] font-extralight text-[clamp(0.875rem,1.5vw,1.25rem)] text-white/60 leading-relaxed">
+          <div className="absolute bottom-16 left-16 text-p2 text-white/60 leading-relaxed">
             <p>{navConfig.contactInfo.email}</p>
             <p>{navConfig.contactInfo.timezone}</p>
             <p>{navConfig.contactInfo.location}</p>

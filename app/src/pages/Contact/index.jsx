@@ -13,7 +13,7 @@ function Contact() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h1 className="font-['Jost'] font-light text-[clamp(3rem,8vw,8rem)] leading-none text-black uppercase mb-16">
+          <h1 className="text-black uppercase mb-16">
             GET IN TOUCH
           </h1>
 
@@ -23,11 +23,11 @@ function Contact() {
               <div>
                 <div className="flex items-center gap-4 mb-4">
                   <Mail size={24} className="text-black" />
-                  <h2 className="font-['Jost'] font-light text-[clamp(1.5rem,3vw,2rem)] text-black uppercase">
+                  <h4 className="text-black uppercase">
                     Email
-                  </h2>
+                  </h4>
                 </div>
-                <p className="font-['Jost'] font-extralight text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase">
+                <p className="text-p2 text-black uppercase">
                   SDSTUDIOS.CO.UK@GMAIL.COM
                 </p>
               </div>
@@ -35,11 +35,11 @@ function Contact() {
               <div>
                 <div className="flex items-center gap-4 mb-4">
                   <MapPin size={24} className="text-black" />
-                  <h2 className="font-['Jost'] font-light text-[clamp(1.5rem,3vw,2rem)] text-black uppercase">
+                  <h4 className="text-black uppercase">
                     Location
-                  </h2>
+                  </h4>
                 </div>
-                <p className="font-['Jost'] font-extralight text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase">
+                <p className="text-p2 text-black uppercase">
                   LONDON, UK
                   <br />
                   TIME ZONE - GMT
@@ -49,11 +49,11 @@ function Contact() {
               <div>
                 <div className="flex items-center gap-4 mb-4">
                   <Phone size={24} className="text-black" />
-                  <h2 className="font-['Jost'] font-light text-[clamp(1.5rem,3vw,2rem)] text-black uppercase">
+                  <h4 className="text-black uppercase">
                     Social
-                  </h2>
+                  </h4>
                 </div>
-                <p className="font-['Jost'] font-extralight text-[clamp(0.875rem,1.5vw,1.25rem)] text-black uppercase">
+                <p className="text-p2 text-black uppercase">
                   INSTAGRAM
                 </p>
               </div>
@@ -61,28 +61,28 @@ function Contact() {
 
             {/* Contact Form Placeholder */}
             <div className="bg-black p-8 rounded-lg">
-              <h2 className="font-['Jost'] font-light text-[clamp(1.5rem,3vw,2rem)] text-white uppercase mb-8">
+              <h4 className="text-white uppercase mb-8">
                 Send a Message
-              </h2>
+              </h4>
               <form className="space-y-6">
                 <input
                   type="text"
                   placeholder="NAME"
-                  className="w-full bg-transparent border-b border-white/20 py-3 text-white font-['Jost'] font-extralight text-[clamp(0.875rem,1.5vw,1.25rem)] uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-transparent border-b border-white/20 py-3 text-white text-p2 uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors"
                 />
                 <input
                   type="email"
                   placeholder="EMAIL"
-                  className="w-full bg-transparent border-b border-white/20 py-3 text-white font-['Jost'] font-extralight text-[clamp(0.875rem,1.5vw,1.25rem)] uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-transparent border-b border-white/20 py-3 text-white text-p2 uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors"
                 />
                 <textarea
                   placeholder="MESSAGE"
                   rows={5}
-                  className="w-full bg-transparent border-b border-white/20 py-3 text-white font-['Jost'] font-extralight text-[clamp(0.875rem,1.5vw,1.25rem)] uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors resize-none"
+                  className="w-full bg-transparent border-b border-white/20 py-3 text-white text-p2 uppercase placeholder:text-white/40 focus:outline-none focus:border-white transition-colors resize-none"
                 />
                 <button
                   type="submit"
-                  className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black bg-white px-8 py-3 uppercase hover:bg-white/90 transition-colors"
+                  className="text-p2 text-black bg-white px-8 py-3 uppercase hover:bg-white/90 transition-colors"
                 >
                   Send Message
                 </button>

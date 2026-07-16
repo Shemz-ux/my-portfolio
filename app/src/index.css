@@ -1,12 +1,49 @@
 /* Jost Font - Must be first */
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
 
-@import './styling/theme.css';
 @import './styling/tailwind.css';
+@import './styling/theme.css';
 
 /* Global font family */
 body {
   font-family: 'Jost', sans-serif;
+}
+
+/* Typography Scale - Responsive with clamp() */
+h1, .text-h1 {
+  font-size: clamp(2.5rem, 6vw + 1rem, 6rem); /* 40px - 96px */
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+h2, .text-h2 {
+  font-size: clamp(2rem, 4.5vw + 0.75rem, 4rem); /* 32px - 64px */
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+h3, .text-h3 {
+  font-size: clamp(1.75rem, 3.5vw + 0.5rem, 3rem); /* 28px - 48px */
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+h4, .text-h4 {
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem); /* 24px - 40px */
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+p, .text-p1 {
+  font-size: clamp(1rem, 2vw + 0.5rem, 2rem); /* 16px - 32px */
+  font-weight: 200;
+  line-height: 1.4;
+}
+
+.text-p2 {
+  font-size: clamp(0.875rem, 1.25vw + 0.25rem, 1.25rem); /* 14px - 20px */
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 /* Custom animations */

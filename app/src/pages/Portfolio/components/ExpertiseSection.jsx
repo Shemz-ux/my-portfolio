@@ -12,7 +12,7 @@ function ExpertiseSection() {
   return (
     <section className="bg-[#f3f3f3] py-24 px-8">
       <div className="max-w-[1728px] mx-auto">
-        <p className="font-['Jost'] font-light text-[clamp(0.875rem,1.5vw,1.25rem)] text-black text-center mb-16 uppercase">
+        <p className="text-p2 text-black text-center mb-16 uppercase">
           [EXPERTISE]
         </p>
 
@@ -20,7 +20,7 @@ function ExpertiseSection() {
           {expertise.map((item) => (
             <p
               key={item}
-              className="font-['Jost'] font-light text-[clamp(2rem,4vw,4rem)] leading-none text-black uppercase"
+              className="text-h2 text-black uppercase"
             >
               {item}
             </p>
