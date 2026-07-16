@@ -42,7 +42,7 @@ p, .text-p1 {
 
 .text-p2 {
   font-size: clamp(0.875rem, 1.25vw + 0.25rem, 1.25rem); /* 14px - 20px */
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.5;
 }
 
@@ -65,4 +65,25 @@ p, .text-p1 {
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+/* Custom bullet points */
+ul.custom-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.custom-bullets li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+ul.custom-bullets li::before {
+  content: '--';
+  position: absolute;
+  left: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transform: translateY(0.3rem);
 }
