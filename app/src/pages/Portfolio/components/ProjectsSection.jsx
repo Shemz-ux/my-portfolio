@@ -7,7 +7,7 @@ const projects = [
     url: '#', // Replace with actual project URL
   },
   {
-    title: 'FO P.',
+    title: 'FO Perpsectives',
     description: 'REACT APP, CAREERS PLATFORM',
     role: 'ROLE: WEB DESIGN, FULL-STACK',
     techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES', 'CLOUDFLARE'],
