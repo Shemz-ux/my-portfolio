@@ -3,6 +3,7 @@ export const navConfig = {
   links: [
     { label: 'HOME', href: '/' },
     { label: 'WORK', href: '/work' },
+    { label: 'SERVICES', href: '/services' },
     { label: 'CONTACT', href: '/contact' },
   ],
   brandName: 'SD STUDIOS',

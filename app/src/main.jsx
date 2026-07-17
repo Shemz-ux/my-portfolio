@@ -6,6 +6,7 @@ import App from './App.jsx';
 import Portfolio from '@/pages/Portfolio/index';
 import Work from '@/pages/Work/index';
 import Contact from '@/pages/Contact/index';
+import Services from '@/pages/Services/index';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: 'work',
         element: <Work />,
+      },
+      {
+        path: 'services',
+        element: <Services />,
       },
       {
         path: 'contact',
