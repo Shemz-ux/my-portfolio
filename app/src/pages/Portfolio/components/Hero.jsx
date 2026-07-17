@@ -1,5 +1,26 @@
+
+import { useEffect, useState } from 'react';
+
 function Hero() {
-  const currentTime = new Date().toLocaleTimeString('en-GB');
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+      const timer = setInterval(() => {
+        setCurrentTime(new Date());
+      }, 1000);
+  
+      return () => clearInterval(timer);
+    }, []);
+  
+    const formatTime = () => {
+      return currentTime.toLocaleTimeString('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: 'Europe/London',
+        hour12: false
+      });
+    };
 
   return (
     <section className="relative bg-[#f3f3f3] py-6 px-8">
@@ -21,9 +42,7 @@ function Hero() {
               <p className="text-p2 text-black uppercase">
                 SHEM K. N
               </p>
-              <p className="text-p2 text-black uppercase">
-                {currentTime} GMT
-              </p>
+              <p className="text-p2">{formatTime()} GMT</p>
             </div>
           <div>
             <p className="text-p2 text-black text-right uppercase">

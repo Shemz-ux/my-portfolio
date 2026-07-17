@@ -1,11 +1,30 @@
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { navConfig } from './index.copy';
 
 function Navbar() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = () => {
+    return currentTime.toLocaleTimeString('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZone: 'Europe/London',
+      hour12: false
+    });
+  };
 
   return (
     <>
@@ -20,8 +39,9 @@ function Navbar() {
             <img 
               src="https://res.cloudinary.com/dcoilkm8r/image/upload/v1784236694/SK_Designz_Logo_qj8bfb.png" 
               alt="SK Designz Logo" 
-              className="h-38"
+              className="h-30"
             />
+            {/* <h1 className="text-p2 font-bold">SHEM N</h1> */}
           </Link>
 
           {/* Hamburger Menu */}
@@ -54,7 +74,7 @@ function Navbar() {
                 key={link.href}
                 to={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-h2 text-white hover:opacity-60 transition-opacity uppercase tracking-wide ${
+                className={`text-h3 text-white hover:opacity-60 transition-opacity uppercase tracking-wide ${
                   location.pathname === link.href ? 'opacity-100' : 'opacity-80'
                 }`}
               >
@@ -65,9 +85,9 @@ function Navbar() {
 
           {/* Contact Info in Overlay */}
           <div className="absolute bottom-16 left-16 text-p2 text-white/60 leading-relaxed">
-            <p>{navConfig.contactInfo.email}</p>
-            <p>{navConfig.contactInfo.timezone}</p>
-            <p>{navConfig.contactInfo.location}</p>
+            <p className="text-p2">{navConfig.contactInfo.email}</p>
+            <p className="text-p2">{formatTime()} GMT</p>
+            <p className="text-p2">{navConfig.contactInfo.location}</p>
           </div>
         </div>
       )}
