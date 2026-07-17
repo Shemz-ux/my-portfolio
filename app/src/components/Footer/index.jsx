@@ -27,9 +27,9 @@ function Footer() {
     <footer className="bg-black py-24 px-8">
       <div className="max-w-[1728px] mx-auto">
         {/* Main CTA */}
-        <div className="mb-16">
+        <div className="mb-26">
           <div className="flex items-baseline gap-4">
-            <h2 className="text-h1 text-white uppercase">
+            <h2 className="text-h2 text-white uppercase">
               {footerConfig.heading}
             </h2>
             <span className="text-p2 text-white uppercase whitespace-nowrap">
