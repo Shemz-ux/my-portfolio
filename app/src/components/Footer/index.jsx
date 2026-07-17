@@ -1,7 +1,28 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { footerConfig } from './index.copy';
 
 function Footer() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = () => {
+    return currentTime.toLocaleTimeString('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZone: 'Europe/London',
+      hour12: false
+    });
+  };
+
   return (
     <footer className="bg-black py-24 px-8">
       <div className="max-w-[1728px] mx-auto">
@@ -35,7 +56,7 @@ function Footer() {
           {/* Contact Info */}
           <div className="text-white mt-35 lg:text-right space-y-1 uppercase">
             <p className="text-p2">{footerConfig.contactInfo.email}</p>
-            <p className="text-p2">{footerConfig.contactInfo.timezone}</p>
+            <p className="text-p2">{formatTime()} GMT</p>
             <p className="text-p2">{footerConfig.contactInfo.location}</p>
             <div className="mt-8 flex gap-8 lg:justify-end">
               {footerConfig.contactInfo.social.map((platform) => (

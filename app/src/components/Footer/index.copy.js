@@ -1,7 +1,7 @@
 // Component configuration
 export const footerConfig = {
   heading: "LET'S GET TO WORK",
-  contactLabel: '[CONTACT]',
+  contactLabel: '[ CONTACT ]',
   navigation: [
     { label: 'HOME', href: '/' },
     { label: 'WORK', href: '/work' },
@@ -16,5 +16,5 @@ export const footerConfig = {
       { label: 'LINKEDIN', url: 'https://linkedin.com' },
     ],
   },
-  backToTopLabel: '[BACK TO TOP]',
+  backToTopLabel: '[ BACK TO TOP ]',
 };
