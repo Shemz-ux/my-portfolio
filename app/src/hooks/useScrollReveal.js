@@ -63,7 +63,6 @@ export const useScrollReveal = (options = {}) => {
         split.lines.forEach((line) => {
           gsap.set(line, {
             display: 'block',
-            lineHeight: '1.6',
           });
         });
       }
