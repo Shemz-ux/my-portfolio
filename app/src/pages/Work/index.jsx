@@ -1,6 +1,8 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import HoverFadeImage from '../../components/HoverFadeImage';
+import RevealText from '../../components/RevealText';
+import HoverRevealText from '../../components/HoverRevealText';
 import { projectPlaceholders } from '../../assets/images/placeholders';
 
 const projects = [
@@ -22,6 +24,7 @@ const projects = [
 
 function Work() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
@@ -35,44 +38,50 @@ function Work() {
     <div className="min-h-screen bg-[#f3f3f3] py-8 px-8">
       <div className="max-w-[1728px] mx-auto">
         {/* Header Section */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-baseline gap-8">
-            <h2 className="text-black uppercase">
-              MY WORK
-            </h2>
-            <span className="text-p2 text-black uppercase">
-              [ WEBSITES ]
-            </span>
+        <RevealText>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-baseline gap-8">
+              <h2 className="text-black uppercase" data-reveal-text>
+                MY WORK
+              </h2>
+              <span className="text-p2 text-black uppercase" data-reveal-text>
+                [ WEBSITES ]
+              </span>
+            </div>
+
+            {/* Navigation Arrows */}
+            <div className="flex items-center gap-4">
+              <button
+                onClick={handlePrevious}
+                className="p-2 hover:opacity-60 transition-opacity"
+                aria-label="Previous project"
+              >
+                <ChevronLeft size={34} strokeWidth={0.5} className="text-black" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="p-2 hover:opacity-60 transition-opacity"
+                aria-label="Next project"
+              >
+                <ChevronRight size={34} strokeWidth={0.5} className="text-black" />
+              </button>
+            </div>
           </div>
 
-          {/* Navigation Arrows */}
-          <div className="flex items-center gap-4">
-            <button
-              onClick={handlePrevious}
-              className="p-2 hover:opacity-60 transition-opacity"
-              aria-label="Previous project"
-            >
-              <ChevronLeft size={34} strokeWidth={0.5} className="text-black" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="p-2 hover:opacity-60 transition-opacity"
-              aria-label="Next project"
-            >
-              <ChevronRight size={34} strokeWidth={0.5} className="text-black" />
-            </button>
-          </div>
-        </div>
-
-        {/* Divider Line */}
-        <div className="border-t border-black/20 mb-16" />
+          {/* Divider Line */}
+          <div className="border-t border-black/20 mb-16" />
+        </RevealText>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
           {projects.map((project) => (
             <div key={project.id} className="space-y-6">
               {/* Project Image Placeholder */}
-              <div className="h-[466px] w-full transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-1">
+              <div 
+                className="h-[466px] w-full transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-1"
+                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+              >
                 <HoverFadeImage
                   images={project.images}
                   alt={`${project.title} screenshots`}
@@ -81,17 +90,17 @@ function Work() {
               </div>
 
               {/* Project Info */}
-              <div>
-                <h3 className="text-black uppercase mb-2">
+              <HoverRevealText isHovered={hoveredProject === project.id}>
+                <h3 className="text-black uppercase mb-2" data-hover-reveal-text>
                   {project.title}
                 </h3>
-                <p className="text-p2 text-black uppercase mb-1">
+                <p className="text-p2 text-black uppercase mb-1" data-hover-reveal-text>
                   {project.tech}
                 </p>
-                <p className="text-p2 text-black uppercase">
+                <p className="text-p2 text-black uppercase" data-hover-reveal-text>
                   {project.description}
                 </p>
-              </div>
+              </HoverRevealText>
             </div>
           ))}
         </div>
