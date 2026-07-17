@@ -33,7 +33,7 @@ function ExpertiseSection() {
             {expertise.map((item, index) => (
               <p
                 key={item}
-                className={`text-p text-black uppercase whitespace-nowrap ${randomPositions[index % randomPositions.length]}`}
+                className={`text-p text-black uppercase whitespace-nowrap leading-relaxed ${randomPositions[index % randomPositions.length]}`}
                 data-reveal-text
               >
                 {item}

@@ -21,7 +21,7 @@ function TechnologiesSection() {
             {technologies.flat().map((tech) => (
               <p
                 key={tech}
-                className="text-p text-black uppercase"
+                className="text-p text-black uppercase leading-relaxed"
                 data-reveal-text
               >
                 {tech}
