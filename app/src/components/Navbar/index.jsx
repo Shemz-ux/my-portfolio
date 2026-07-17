@@ -1,12 +1,18 @@
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { navConfig } from './index.copy';
 
 function Navbar() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const menuOverlayRef = useRef(null);
+  const menuContentRef = useRef(null);
+  const prefersReducedMotion = useRef(
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -15,6 +21,47 @@ function Navbar() {
 
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    if (!menuOverlayRef.current || !menuContentRef.current) return;
+
+    gsap.set(menuOverlayRef.current, { y: '-100%' });
+    gsap.set(menuContentRef.current, { opacity: 0 });
+  }, []);
+
+  useEffect(() => {
+    if (!menuOverlayRef.current || !menuContentRef.current) return;
+
+    const reducedMotion = prefersReducedMotion.current;
+    const duration = reducedMotion ? 0.3 : 0.8;
+    const ease = reducedMotion ? 'none' : 'power3.inOut';
+
+    if (menuOpen) {
+      const tl = gsap.timeline();
+      tl.to(menuOverlayRef.current, {
+        y: '0%',
+        duration: duration,
+        ease: ease
+      })
+      .to(menuContentRef.current, {
+        opacity: 1,
+        duration: reducedMotion ? 0.2 : 0.4,
+        ease: 'power2.out'
+      }, '-=0.3');
+    } else {
+      const tl = gsap.timeline();
+      tl.to(menuContentRef.current, {
+        opacity: 0,
+        duration: reducedMotion ? 0.1 : 0.3,
+        ease: 'power2.in'
+      })
+      .to(menuOverlayRef.current, {
+        y: '-100%',
+        duration: duration,
+        ease: ease
+      }, '-=0.1');
+    }
+  }, [menuOpen]);
 
   const formatTime = () => {
     return currentTime.toLocaleTimeString('en-GB', {
@@ -56,8 +103,15 @@ function Navbar() {
       </header>
 
       {/* Full Screen Menu Overlay */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center">
+      <div 
+        ref={menuOverlayRef}
+        className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center"
+        style={{ 
+          willChange: 'transform',
+          pointerEvents: menuOpen ? 'auto' : 'none'
+        }}
+      >
+        <div ref={menuContentRef} style={{ willChange: 'opacity' }}>
           {/* Close Button */}
           <button
             onClick={() => setMenuOpen(false)}
@@ -90,7 +144,7 @@ function Navbar() {
             <p className="text-p2">{navConfig.contactInfo.location}</p>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
