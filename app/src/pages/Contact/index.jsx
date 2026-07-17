@@ -44,7 +44,7 @@ function Contact() {
     <div className="min-h-screen bg-[#f3f3f3] pt-22 pb-8 px-8">
       <div className="max-w-[1728px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h1 className="text-black uppercase mb-4">
             {contactConfig.heading}
           </h1>
@@ -54,9 +54,9 @@ function Contact() {
         </div>
 
         {/* Form Container */}
-        <div className="max-w-[1024px] mx-auto border border-black rounded-[50px] p-16 relative min-h-[740px] flex flex-col mb-24 mt-24">
+        <div className="max-w-[800px] mx-auto border border-black rounded-[60px] p-10 relative min-h-[500px] flex flex-col mb-16 mt-12">
           {/* Subheading */}
-          <h3 className="text-center text-black/26 uppercase mb-12 text-h4">
+          <h3 className="text-center text-black/26 uppercase mb-8 text-h4">
             {contactConfig.subheading}
           </h3>
 
@@ -64,7 +64,7 @@ function Contact() {
             <>
               {/* Form Fields */}
               <div className="flex-1 flex items-center justify-center">
-                <div className="w-full max-w-[600px] space-y-12">
+                <div className="w-full max-w-[500px] space-y-8">
                   {contactConfig.steps[step - 1].fields.map((field) => (
                     <input
                       key={field.name}
@@ -73,7 +73,7 @@ function Contact() {
                       value={formData[field.name]}
                       onChange={handleInputChange}
                       placeholder={field.placeholder}
-                      className="w-full bg-transparent border-b border-black/20 pb-3 text-black text-h4 placeholder:text-black/20 focus:outline-none focus:border-black transition-colors uppercase"
+                      className="w-full bg-transparent border-b border-black/20 pb-2 text-black text-p1 placeholder:text-black/20 focus:outline-none focus:border-black transition-colors uppercase"
                     />
                   ))}
                 </div>
@@ -114,17 +114,17 @@ function Contact() {
 
               <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
                 {/* Budget Section */}
-                <div className="mb-12">
-                  <h3 className="text-center text-black/36 uppercase mb-8">
+                <div className="mb-8">
+                  <h3 className="text-center text-black/36 uppercase mb-6">
                     BUDGET
                   </h3>
-                  <div className="flex justify-center gap-6">
+                  <div className="flex justify-center gap-4">
                     {contactConfig.budgetOptions.map((option) => (
                       <button
                         key={option.value}
                         type="button"
                         onClick={() => setSelectedBudget(option.value)}
-                        className={`border border-black px-6 py-1 text-p2 uppercase transition-all ${
+                        className={`border border-black px-5 py-1 text-p2 uppercase transition-all ${
                           selectedBudget === option.value
                             ? 'bg-black text-white'
                             : 'bg-transparent text-black hover:bg-black/5'
@@ -138,19 +138,19 @@ function Contact() {
 
                 {/* Project Details Section */}
                 <div className="flex-1 flex flex-col">
-                  <h3 className="text-center text-black/36 uppercase mb-8">
+                  <h3 className="text-center text-black/36 uppercase mb-6">
                     PROJECT DETAILS
                   </h3>
                   <textarea
                     value={projectDetails}
                     onChange={(e) => setProjectDetails(e.target.value)}
-                    className="flex-1 w-full bg-transparent border-b border-black/20 pb-4 text-black text-p2 placeholder:text-black/20 focus:outline-none focus:border-black transition-colors resize-none"
+                    className="flex-1 w-full bg-transparent border-b border-black/20 pb-3 text-black text-p2 placeholder:text-black/20 focus:outline-none focus:border-black transition-colors resize-none"
                     placeholder=""
                   />
                 </div>
 
                 {/* Send Button */}
-                <div className="text-center mt-8">
+                <div className="text-center mt-6">
                   <button
                     type="submit"
                     className="text-p2 text-black uppercase hover:opacity-60 transition-opacity"
