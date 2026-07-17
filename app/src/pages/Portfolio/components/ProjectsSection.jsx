@@ -1,3 +1,6 @@
+import HoverFadeImage from '../../../components/HoverFadeImage';
+import { projectPlaceholders } from '../../../assets/images/placeholders';
+
 const projects = [
   {
     title: 'AITC',
@@ -5,6 +8,7 @@ const projects = [
     role: 'ROLE: WEB DESIGN, FULL-STACK',
     techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES'],
     url: '#', // Replace with actual project URL
+    images: projectPlaceholders.aitc,
   },
   {
     title: 'FO Perpsectives',
@@ -12,6 +16,7 @@ const projects = [
     role: 'ROLE: WEB DESIGN, FULL-STACK',
     techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES', 'CLOUDFLARE'],
     url: '#', // Replace with actual project URL
+    images: projectPlaceholders.foPerspectives,
   },
 ];
 
@@ -25,9 +30,13 @@ function ProjectsSection() {
           return (
             <div key={project.title} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Image - Left side for even indices, right side for odd */}
-              <div 
-                className={`bg-[#f3f3f3] h-[450px] ${isEven ? '' : 'lg:order-2'}`} 
-              />
+              <div className={`h-[450px] ${isEven ? '' : 'lg:order-2'}`}>
+                <HoverFadeImage 
+                  images={project.images}
+                  alt={`${project.title} project screenshots`}
+                  className="bg-[#f3f3f3]"
+                />
+              </div>
               
               {/* Content - Right side for even indices, left side for odd */}
               <div className={`text-white ${isEven ? '' : 'lg:order-1'}`}>
