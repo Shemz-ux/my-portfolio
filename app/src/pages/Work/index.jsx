@@ -30,10 +30,10 @@ function Work() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] py-24 px-8">
+    <div className="min-h-screen bg-[#f3f3f3] py-8 px-8">
       <div className="max-w-[1728px] mx-auto">
         {/* Header Section */}
-        <div className="flex items-center justify-between mb-16">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex items-baseline gap-8">
             <h2 className="text-black uppercase">
               MY WORK
@@ -50,17 +50,20 @@ function Work() {
               className="p-2 hover:opacity-60 transition-opacity"
               aria-label="Previous project"
             >
-              <ChevronLeft size={24} strokeWidth={1} className="text-black" />
+              <ChevronLeft size={34} strokeWidth={0.5} className="text-black" />
             </button>
             <button
               onClick={handleNext}
               className="p-2 hover:opacity-60 transition-opacity"
               aria-label="Next project"
             >
-              <ChevronRight size={24} strokeWidth={1} className="text-black" />
+              <ChevronRight size={34} strokeWidth={0.5} className="text-black" />
             </button>
           </div>
         </div>
+
+        {/* Divider Line */}
+        <div className="border-t border-black/20 mb-16" />
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
@@ -84,9 +87,6 @@ function Work() {
             </div>
           ))}
         </div>
-
-        {/* Divider Line */}
-        <div className="border-t border-black/20 mb-16" />
       </div>
     </div>
   );

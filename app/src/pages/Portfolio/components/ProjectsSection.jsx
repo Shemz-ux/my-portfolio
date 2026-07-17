@@ -41,7 +41,7 @@ function ProjectsSection() {
                     rel="noopener noreferrer"
                     className="text-p2 uppercase hover:opacity-70 transition-opacity whitespace-nowrap"
                   >
-                    [OPEN]
+                    [ OPEN ]
                   </a>
                 </div>
                 <p className="text-p2 mb-2 uppercase">
