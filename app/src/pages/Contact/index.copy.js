@@ -13,15 +13,15 @@ export const contactConfig = {
       fields: [
         { name: 'name', type: 'text', placeholder: 'NAME' },
         { name: 'email', type: 'email', placeholder: 'EMAIL' },
-        { name: 'company', type: 'text', placeholder: 'COMPANY' }
+        { name: 'company', type: 'text', placeholder: 'COMPANY (OPTIONAL)' }
       ]
     },
     {
       id: 2,
       fields: [
-        { name: 'phone', type: 'tel', placeholder: 'PHONE NUMBER (OPTIONAL)' },
+        { name: 'phone', type: 'tel', placeholder: 'PHONE NUMBER' },
         { name: 'website', type: 'url', placeholder: 'WEBSITE (OPTIONAL)' },
-        { name: 'timeline', type: 'text', placeholder: 'PROJECT TIMELINE' }
+        { name: 'timeline', type: 'text', placeholder: 'INDUSTRY' }
       ]
     },
     {

@@ -56,15 +56,15 @@ function Contact() {
         {/* Form Container */}
         <div className="max-w-[800px] mx-auto border border-black rounded-[60px] p-10 relative min-h-[500px] flex flex-col mb-16 mt-12">
           {/* Subheading */}
-          <h3 className="text-center text-black/26 uppercase mb-8 text-h4">
+          {/* <h3 className="text-center text-black/26 uppercase mb-8 text-h4">
             {contactConfig.subheading}
-          </h3>
+          </h3> */}
 
           {contactConfig.steps[step - 1]?.fields ? (
             <>
               {/* Form Fields */}
               <div className="flex-1 flex items-center justify-center">
-                <div className="w-full max-w-[500px] space-y-8">
+                <div className="w-full max-w-[500px] space-y-12">
                   {contactConfig.steps[step - 1].fields.map((field) => (
                     <input
                       key={field.name}
