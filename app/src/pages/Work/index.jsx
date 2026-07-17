@@ -1,5 +1,7 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import HoverFadeImage from '../../components/HoverFadeImage';
+import { projectPlaceholders } from '../../assets/images/placeholders';
 
 const projects = [
   {
@@ -7,14 +9,14 @@ const projects = [
     title: 'WEBSITE 1',
     tech: 'REACT JS, EXPRESS JS, POSTGRES, CLOUDFLARE',
     description: 'WEBSITE DESIGN & DEVELOPMENT',
-    image: null, // Placeholder
+    images: projectPlaceholders.workProject1,
   },
   {
     id: 2,
-    title: 'WEBSITE 1',
+    title: 'WEBSITE 2',
     tech: 'REACT JS, EXPRESS JS, POSTGRES, CLOUDFLARE',
     description: 'WEBSITE DESIGN & DEVELOPMENT',
-    image: null, // Placeholder
+    images: projectPlaceholders.workProject2,
   },
 ];
 
@@ -70,7 +72,13 @@ function Work() {
           {projects.map((project) => (
             <div key={project.id} className="space-y-6">
               {/* Project Image Placeholder */}
-              <div className="bg-[#d9d9d9] h-[466px] w-full" />
+              <div className="h-[466px] w-full transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-1">
+                <HoverFadeImage
+                  images={project.images}
+                  alt={`${project.title} screenshots`}
+                  className="bg-[#d9d9d9]"
+                />
+              </div>
 
               {/* Project Info */}
               <div>
