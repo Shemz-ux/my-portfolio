@@ -1,4 +1,5 @@
 import HoverFadeImage from '../../../components/HoverFadeImage';
+import RevealText from '../../../components/RevealText';
 import { projectPlaceholders } from '../../../assets/images/placeholders';
 
 const projects = [
@@ -39,9 +40,9 @@ function ProjectsSection() {
               </div>
               
               {/* Content - Right side for even indices, left side for odd */}
-              <div className={`text-white ${isEven ? '' : 'lg:order-1'}`}>
+              <RevealText className={`text-white ${isEven ? '' : 'lg:order-1'}`}>
                 <div className="flex items-baseline gap-4 mb-8">
-                  <h2 className="uppercase">
+                  <h2 className="uppercase" data-reveal-text>
                     {project.title}
                   </h2>
                   <a 
@@ -49,25 +50,26 @@ function ProjectsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-p2 uppercase hover:opacity-70 transition-opacity whitespace-nowrap"
+                    data-reveal-text
                   >
                     [ OPEN ]
                   </a>
                 </div>
-                <p className="text-p2 mb-2 uppercase">
+                <p className="text-p2 mb-2 uppercase" data-reveal-text>
                   {project.description}
                 </p>
-                <p className="text-p2 mb-4 uppercase">
+                <p className="text-p2 mb-4 uppercase" data-reveal-text>
                   {project.role}
                 </p>
                 <div className="text-p2 uppercase">
-                  <p className="text-p2 mb-2">TECH STACK:</p>
-                  <ul className="custom-bullets ml-8 space-y-1">
+                  <p className="text-p2 mb-2" data-reveal-text>TECH STACK:</p>
+                  <ul className="ml-8 space-y-1 list-none">
                     {project.techStack.map((tech) => (
-                      <li key={tech}>{tech}</li>
+                      <li key={tech} className="pl-6" data-reveal-text>-- {tech}</li>
                     ))}
                   </ul>
                 </div>
-              </div>
+              </RevealText>
             </div>
           );
         })}
