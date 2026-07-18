@@ -12,24 +12,24 @@ gsap.registerPlugin(Draggable);
 const projects = [
   {
     id: 1,
-    title: 'WEBSITE 1',
+    title: 'OPPORTUNITY CENTRAL',
     tech: 'REACT JS, EXPRESS JS, POSTGRES, CLOUDFLARE',
     description: 'WEBSITE DESIGN & DEVELOPMENT',
-    images: projectPlaceholders.workProject1,
+    images: projectPlaceholders.oc,
   },
   {
     id: 2,
-    title: 'WEBSITE 2',
+    title: 'AITC',
     tech: 'REACT JS, EXPRESS JS, POSTGRES, CLOUDFLARE',
     description: 'WEBSITE DESIGN & DEVELOPMENT',
-    images: projectPlaceholders.workProject2,
+    images: projectPlaceholders.aitc,
   },
   {
     id: 3,
-    title: 'WEBSITE 3',
+    title: 'FO PERSPECTIVES',
     tech: 'VUE JS, NODE JS, MONGODB, AWS',
     description: 'E-COMMERCE PLATFORM',
-    images: projectPlaceholders.workProject1,
+    images: projectPlaceholders.foPerspectives,
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const projects = [
     title: 'WEBSITE 5',
     tech: 'REACT NATIVE, FIREBASE, EXPO',
     description: 'MOBILE APP DEVELOPMENT',
-    images: projectPlaceholders.workProject1,
+    images: projectPlaceholders.oc,
   },
 ];
 
