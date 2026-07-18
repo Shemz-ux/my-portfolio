@@ -8,11 +8,10 @@ function Services() {
     'SHOPIFY DEVELOPMENT',
     'NO CODE DEVELOPMENT (WEBFLOW & FRAMER)',
     'INTERACTIVE ANIMATIONS (GSAP & CSS)',
-    '3D EXPERIENCES (THREE.JS & R3F)',
   ];
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] px-4 sm:px-8 py-12 sm:py-16">
+    <div className="min-h-screen bg-[#f3f3f3] px-4 sm:px-8 py-12 sm:py-4">
       <div className="max-w-[1728px] mx-auto">
         {/* Header */}
         <RevealText>
@@ -20,7 +19,7 @@ function Services() {
             <h1 className="text-h2 font-light mb-4 uppercase tracking-tight" data-reveal-text>
               SERVICES
             </h1>
-            <div className="w-full h-[1px] bg-black"></div>
+            <div className="w-full h-[0.5px] bg-black"></div>
           </div>
         </RevealText>
 
@@ -46,12 +45,12 @@ function Services() {
                       size={28} 
                       strokeWidth={1.0}
                     />
-                    <p className="text-h4 font-light uppercase tracking-tight leading-relaxed transition-transform duration-300 ease-out group-hover:translate-x-2" data-reveal-text>
+                    <p className="text-p1 font-light uppercase tracking-tight leading-relaxed transition-transform duration-300 ease-out group-hover:translate-x-2" data-reveal-text>
                       {service}
                     </p>
                   </div>
                   {index < services.length - 1 && (
-                    <div className="w-full h-[1px] bg-black"></div>
+                    <div className="w-full h-[0.5px] bg-black"></div>
                   )}
                 </div>
               ))}
