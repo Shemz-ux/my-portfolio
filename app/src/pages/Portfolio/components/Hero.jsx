@@ -23,11 +23,11 @@ function Hero() {
     };
 
   return (
-    <section className="relative bg-[#f3f3f3] py-6 px-4 sm:px-8">
-      <div className="max-w-[1728px] mx-auto">
+    <section className="relative bg-[#f3f3f3] py-6 px-4 sm:px-8 min-h-[calc(100vh-5rem)] sm:min-h-0 flex items-center">
+      <div className="max-w-[1728px] mx-auto w-full">
         <RevealText>
           {/* Main Heading */}
-          <div className="relative mt-16 sm:mt-24 md:mt-32 lg:mt-90">
+          <div className="relative mt-8 sm:mt-24 md:mt-32 lg:mt-90">
             <div className="mb-4">
               <p className="text-p2 text-black text-left uppercase" data-reveal-text>
                 [ SOFTWARE ENGINEER ]
