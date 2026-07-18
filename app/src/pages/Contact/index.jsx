@@ -44,7 +44,7 @@ function Contact() {
     <div className="min-h-screen bg-[#f3f3f3] pt-16 sm:pt-22 pb-8 px-4 sm:px-8">
       <div className="max-w-[1728px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-6 sm:mb-8">
+        <div className="text-center mb-16 sm:mb-8">
           <h1 className="text-black uppercase mb-4">
             {contactConfig.heading}
           </h1>
@@ -54,7 +54,7 @@ function Contact() {
         </div>
 
         {/* Form Container */}
-        <div className="max-w-[800px] mx-auto border border-black rounded-[30px] sm:rounded-[40px] md:rounded-[60px] p-6 sm:p-8 md:p-10 relative min-h-[400px] sm:min-h-[500px] flex flex-col mb-12 sm:mb-16 mt-8 sm:mt-12">
+        <div className="max-w-[800px] mx-auto border border-black/20 rounded-[30px] sm:rounded-[40px] md:rounded-[60px] p-6 sm:p-8 md:p-10 relative min-h-[400px] sm:min-h-[500px] flex flex-col mb-12 sm:mb-16 mt-18 sm:mt-12">
           {/* Subheading */}
           {/* <h3 className="text-center text-black/26 uppercase mb-8 text-h4">
             {contactConfig.subheading}
