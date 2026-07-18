@@ -7,6 +7,7 @@ function HoverFadeImage({ images, alt = 'Project image', className = '' }) {
     handleMouseLeave,
     transitionDuration,
     prefersReducedMotion,
+    elementRef,
   } = useImageHoverCycle(images, {
     interval: 1400,
     transitionDuration: 500,
@@ -24,6 +25,7 @@ function HoverFadeImage({ images, alt = 'Project image', className = '' }) {
 
   return (
     <div
+      ref={elementRef}
       className={`relative w-full h-full overflow-hidden ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

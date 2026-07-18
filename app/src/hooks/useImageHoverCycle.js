@@ -1,18 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
+import { isTouchDevice } from '../utils/responsive';
 
 export const useImageHoverCycle = (images, options = {}) => {
   const {
-    interval = 1000, // ~1.4s per image
-    transitionDuration = 500, // 500ms crossfade
+    interval = 1000,
+    transitionDuration = 500,
   } = options;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   const intervalRef = useRef(null);
+  const elementRef = useRef(null);
   const prefersReducedMotion = useRef(
     typeof window !== 'undefined' 
       ? window.matchMedia('(prefers-reduced-motion: reduce)').matches 
       : false
+  );
+  const isTouch = useRef(
+    typeof window !== 'undefined' ? isTouchDevice() : false
   );
 
   useEffect(() => {
@@ -30,7 +36,30 @@ export const useImageHoverCycle = (images, options = {}) => {
   }, []);
 
   useEffect(() => {
-    if (isHovering && !prefersReducedMotion.current && images.length > 1) {
+    if (!elementRef.current || !isTouch.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(elementRef.current);
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const shouldCycle = isTouch.current 
+      ? isInView && !prefersReducedMotion.current && images.length > 1
+      : isHovering && !prefersReducedMotion.current && images.length > 1;
+
+    if (shouldCycle) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % images.length);
       }, interval);
@@ -40,17 +69,22 @@ export const useImageHoverCycle = (images, options = {}) => {
           clearInterval(intervalRef.current);
         }
       };
+    } else if (!isTouch.current && !isHovering) {
+      setCurrentIndex(0);
     }
-  }, [isHovering, images.length, interval]);
+  }, [isHovering, isInView, images.length, interval]);
 
   const handleMouseEnter = () => {
-    setIsHovering(true);
+    if (!isTouch.current) {
+      setIsHovering(true);
+    }
   };
 
   const handleMouseLeave = () => {
-    setIsHovering(false);
-    // Smoothly fade back to first image
-    setCurrentIndex(0);
+    if (!isTouch.current) {
+      setIsHovering(false);
+      setCurrentIndex(0);
+    }
   };
 
   return {
@@ -60,5 +94,6 @@ export const useImageHoverCycle = (images, options = {}) => {
     handleMouseLeave,
     transitionDuration,
     prefersReducedMotion: prefersReducedMotion.current,
+    elementRef,
   };
 };

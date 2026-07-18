@@ -77,7 +77,7 @@ function Navbar() {
     <>
       {/* Main Navbar */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#f3f3f3]">
-        <div className="max-w-[1728px] mx-auto px-8 py-8 flex items-center justify-between">
+        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 py-6 sm:py-8 flex items-center justify-between">
           {/* Logo - Centered */}
           <Link 
             to="/" 
@@ -86,7 +86,7 @@ function Navbar() {
             <img 
               src="https://res.cloudinary.com/dcoilkm8r/image/upload/v1784236694/SK_Designz_Logo_qj8bfb.png" 
               alt="SK Designz Logo" 
-              className="h-30"
+              className="h-20 sm:h-24 md:h-30"
             />
             {/* <h1 className="text-p2 font-bold">SHEM N</h1> */}
           </Link>
@@ -94,7 +94,7 @@ function Navbar() {
           {/* Hamburger Menu */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="ml-auto p-2 text-black hover:opacity-60 transition-opacity"
+            className="ml-auto p-2 text-black hover:opacity-60 transition-opacity min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             <Menu size={24} strokeWidth={1} />
@@ -115,20 +115,20 @@ function Navbar() {
           {/* Close Button */}
           <button
             onClick={() => setMenuOpen(false)}
-            className="absolute top-8 right-8 p-2 text-white hover:opacity-60 transition-opacity"
+            className="absolute top-6 right-6 sm:top-8 sm:right-8 p-2 text-white hover:opacity-60 transition-opacity min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Close menu"
           >
             <X size={32} strokeWidth={1} />
           </button>
 
           {/* Navigation Links */}
-          <nav className="flex flex-col items-center gap-8">
+          <nav className="flex flex-col items-center gap-6 sm:gap-8 px-4">
             {navConfig.links.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-h3 text-white hover:opacity-60 transition-opacity uppercase tracking-wide ${
+                className={`text-h3 text-white hover:opacity-60 transition-opacity uppercase tracking-wide text-center ${
                   location.pathname === link.href ? 'opacity-100' : 'opacity-80'
                 }`}
               >
@@ -138,7 +138,7 @@ function Navbar() {
           </nav>
 
           {/* Contact Info in Overlay */}
-          <div className="absolute bottom-16 left-16 text-p2 text-white/60 leading-relaxed">
+          <div className="absolute bottom-8 left-6 sm:bottom-16 sm:left-16 text-p2 text-white/60 leading-relaxed">
             <p className="text-p2">{navConfig.contactInfo.email}</p>
             <p className="text-p2">{formatTime()} GMT</p>
             <p className="text-p2">{navConfig.contactInfo.location}</p>

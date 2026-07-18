@@ -12,11 +12,11 @@ function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] px-8 py-16">
+    <div className="min-h-screen bg-[#f3f3f3] px-4 sm:px-8 py-12 sm:py-16">
       <div className="max-w-[1728px] mx-auto">
         {/* Header */}
         <RevealText>
-          <div className="mb-16">
+          <div className="mb-12 sm:mb-16">
             <h1 className="text-h2 font-light mb-4 uppercase tracking-tight" data-reveal-text>
               SERVICES
             </h1>
@@ -25,7 +25,7 @@ function Services() {
         </RevealText>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           {/* Left Column */}
           <RevealText>
             <div>
@@ -40,10 +40,10 @@ function Services() {
             <div className="space-y-0">
               {services.map((service, index) => (
                 <div key={index} className="group">
-                  <div className="flex items-center gap-4 py-6 cursor-pointer">
+                  <div className="flex items-center gap-3 sm:gap-4 py-4 sm:py-6 cursor-pointer min-h-[44px]">
                     <ChevronRight 
-                      className="opacity-0 -translate-x-4 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0" 
-                      size={34} 
+                      className="opacity-0 -translate-x-4 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 flex-shrink-0" 
+                      size={28} 
                       strokeWidth={1.0}
                     />
                     <p className="text-h4 font-light uppercase tracking-tight leading-relaxed transition-transform duration-300 ease-out group-hover:translate-x-2" data-reveal-text>

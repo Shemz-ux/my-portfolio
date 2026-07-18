@@ -49,57 +49,88 @@ export const useScrollReveal = (options = {}) => {
       return;
     }
 
-    const allWords = [];
+    const setupSplitText = () => {
+      splitInstancesRef.current.forEach((split) => {
+        if (split && split.revert) {
+          split.revert();
+        }
+      });
+      splitInstancesRef.current = [];
 
-    textElements.forEach((element) => {
-      const split = new SplitType(element, {
-        types: 'lines,words',
-        tagName: 'span',
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+      }
+
+      const allWords = [];
+
+      textElements.forEach((element) => {
+        const split = new SplitType(element, {
+          types: 'lines,words',
+          tagName: 'span',
+        });
+
+        splitInstancesRef.current.push(split);
+
+        if (split.lines) {
+          split.lines.forEach((line) => {
+            gsap.set(line, {
+              display: 'block',
+            });
+          });
+        }
+
+        if (split.words) {
+          split.words.forEach((word) => {
+            gsap.set(word, {
+              display: 'inline-block',
+              willChange: 'transform, opacity',
+            });
+            allWords.push(word);
+          });
+
+          gsap.set(split.words, {
+            y: '100%',
+            opacity: 0,
+          });
+        }
       });
 
-      splitInstancesRef.current.push(split);
-
-      if (split.lines) {
-        split.lines.forEach((line) => {
-          gsap.set(line, {
-            display: 'block',
+      scrollTriggerRef.current = ScrollTrigger.create({
+        trigger: container,
+        start: triggerStart,
+        once: true,
+        onEnter: () => {
+          gsap.to(allWords, {
+            y: 0,
+            opacity: 1,
+            duration: duration,
+            ease: ease,
+            stagger: staggerDelay,
+            clearProps: 'willChange',
           });
-        });
-      }
+        },
+      });
+    };
 
-      if (split.words) {
-        split.words.forEach((word) => {
-          gsap.set(word, {
-            display: 'inline-block',
-            willChange: 'transform, opacity',
-          });
-          allWords.push(word);
-        });
+    setupSplitText();
 
-        gsap.set(split.words, {
-          y: '100%',
-          opacity: 0,
-        });
-      }
-    });
+    let resizeTimeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        setupSplitText();
+        ScrollTrigger.refresh();
+      }, 250);
+    };
 
-    scrollTriggerRef.current = ScrollTrigger.create({
-      trigger: container,
-      start: triggerStart,
-      once: true,
-      onEnter: () => {
-        gsap.to(allWords, {
-          y: 0,
-          opacity: 1,
-          duration: duration,
-          ease: ease,
-          stagger: staggerDelay,
-          clearProps: 'willChange',
-        });
-      },
-    });
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
 
     return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+      clearTimeout(resizeTimeout);
+
       if (scrollTriggerRef.current) {
         scrollTriggerRef.current.kill();
       }

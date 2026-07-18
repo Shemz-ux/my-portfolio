@@ -43,46 +43,72 @@ export const useHoverReveal = (options = {}) => {
 
     if (textElements.length === 0) return;
 
-    const allWords = [];
+    const setupSplitText = () => {
+      splitInstancesRef.current.forEach((split) => {
+        if (split && split.revert) {
+          split.revert();
+        }
+      });
+      splitInstancesRef.current = [];
 
-    textElements.forEach((element) => {
-      const split = new SplitType(element, {
-        types: 'lines,words',
-        tagName: 'span',
+      const allWords = [];
+
+      textElements.forEach((element) => {
+        const split = new SplitType(element, {
+          types: 'lines,words',
+          tagName: 'span',
+        });
+
+        splitInstancesRef.current.push(split);
+
+        if (split.lines) {
+          split.lines.forEach((line) => {
+            gsap.set(line, {
+              overflow: 'hidden',
+              display: 'block',
+            });
+          });
+        }
+
+        if (split.words) {
+          split.words.forEach((word) => {
+            gsap.set(word, {
+              display: 'inline-block',
+              willChange: 'transform, opacity',
+            });
+            allWords.push(word);
+          });
+        }
       });
 
-      splitInstancesRef.current.push(split);
-
-      if (split.lines) {
-        split.lines.forEach((line) => {
-          gsap.set(line, {
-            overflow: 'hidden',
-            display: 'block',
-          });
+      if (prefersReducedMotion.current) {
+        gsap.set(allWords, { y: 0, opacity: isHovered ? 1 : 0 });
+      } else {
+        gsap.set(allWords, {
+          y: isHovered ? 0 : '100%',
+          opacity: isHovered ? 1 : 0,
         });
       }
+    };
 
-      if (split.words) {
-        split.words.forEach((word) => {
-          gsap.set(word, {
-            display: 'inline-block',
-            willChange: 'transform, opacity',
-          });
-          allWords.push(word);
-        });
-      }
-    });
+    setupSplitText();
 
-    if (prefersReducedMotion.current) {
-      gsap.set(allWords, { y: 0, opacity: isHovered ? 1 : 0 });
-    } else {
-      gsap.set(allWords, {
-        y: isHovered ? 0 : '100%',
-        opacity: isHovered ? 1 : 0,
-      });
-    }
+    let resizeTimeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        setupSplitText();
+      }, 250);
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
 
     return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+      clearTimeout(resizeTimeout);
+
       splitInstancesRef.current.forEach((split) => {
         if (split && split.revert) {
           split.revert();

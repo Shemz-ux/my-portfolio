@@ -41,10 +41,10 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f3f3f3] pt-22 pb-8 px-8">
+    <div className="min-h-screen bg-[#f3f3f3] pt-16 sm:pt-22 pb-8 px-4 sm:px-8">
       <div className="max-w-[1728px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <h1 className="text-black uppercase mb-4">
             {contactConfig.heading}
           </h1>
@@ -54,7 +54,7 @@ function Contact() {
         </div>
 
         {/* Form Container */}
-        <div className="max-w-[800px] mx-auto border border-black rounded-[60px] p-10 relative min-h-[500px] flex flex-col mb-16 mt-12">
+        <div className="max-w-[800px] mx-auto border border-black rounded-[30px] sm:rounded-[40px] md:rounded-[60px] p-6 sm:p-8 md:p-10 relative min-h-[400px] sm:min-h-[500px] flex flex-col mb-12 sm:mb-16 mt-8 sm:mt-12">
           {/* Subheading */}
           {/* <h3 className="text-center text-black/26 uppercase mb-8 text-h4">
             {contactConfig.subheading}
@@ -84,47 +84,47 @@ function Contact() {
                 {step > 1 && (
                   <button
                     onClick={handleBack}
-                    className="flex items-center gap-3 hover:opacity-60 transition-opacity"
+                    className="flex items-center gap-2 sm:gap-3 hover:opacity-60 transition-opacity min-h-[44px] p-2"
                   >
-                    <ChevronLeft size={34} strokeWidth={0.5} className="text-black" />
+                    <ChevronLeft size={28} strokeWidth={0.5} className="text-black" />
                     <span className="text-p2 text-black uppercase">BACK</span>
                   </button>
                 )}
                 <button
                   onClick={handleNext}
-                  className="flex items-center gap-3 hover:opacity-60 transition-opacity ml-auto"
+                  className="flex items-center gap-2 sm:gap-3 hover:opacity-60 transition-opacity ml-auto min-h-[44px] p-2"
                 >
                   <span className="text-p2 text-black uppercase">NEXT</span>
-                  <ChevronRight size={34} strokeWidth={0.5} className="text-black" />
+                  <ChevronRight size={28} strokeWidth={0.5} className="text-black" />
                 </button>
               </div>
             </>
           ) : contactConfig.steps[step - 1]?.showBudget ? (
             <>
               {/* Back Button */}
-              <div className="mb-8">
+              <div className="mb-6 sm:mb-8">
                 <button
                   onClick={handleBack}
-                  className="flex items-center gap-3 hover:opacity-60 transition-opacity"
+                  className="flex items-center gap-2 sm:gap-3 hover:opacity-60 transition-opacity min-h-[44px] p-2"
                 >
-                  <ChevronLeft size={34} strokeWidth={0.5} className="text-black" />
+                  <ChevronLeft size={28} strokeWidth={0.5} className="text-black" />
                   <span className="text-p2 text-black uppercase">BACK</span>
                 </button>
               </div>
 
               <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
                 {/* Budget Section */}
-                <div className="mb-8">
-                  <h3 className="text-center text-black/36 uppercase mb-6">
+                <div className="mb-6 sm:mb-8">
+                  <h3 className="text-center text-black/36 uppercase mb-4 sm:mb-6">
                     BUDGET
                   </h3>
-                  <div className="flex justify-center gap-4">
+                  <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                     {contactConfig.budgetOptions.map((option) => (
                       <button
                         key={option.value}
                         type="button"
                         onClick={() => setSelectedBudget(option.value)}
-                        className={`border border-black px-5 py-1 text-p2 uppercase transition-all ${
+                        className={`border border-black px-4 sm:px-5 py-2 sm:py-1 text-p2 uppercase transition-all min-h-[44px] ${
                           selectedBudget === option.value
                             ? 'bg-black text-white'
                             : 'bg-transparent text-black hover:bg-black/5'
@@ -153,7 +153,7 @@ function Contact() {
                 <div className="text-center mt-6">
                   <button
                     type="submit"
-                    className="text-p2 text-black uppercase hover:opacity-60 transition-opacity"
+                    className="text-p2 text-black uppercase hover:opacity-60 transition-opacity min-h-[44px] px-4 py-2"
                   >
                     SEND
                   </button>

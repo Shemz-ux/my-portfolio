@@ -23,23 +23,23 @@ function Hero() {
     };
 
   return (
-    <section className="relative bg-[#f3f3f3] py-6 px-8">
+    <section className="relative bg-[#f3f3f3] py-6 px-4 sm:px-8">
       <div className="max-w-[1728px] mx-auto">
         <RevealText>
           {/* Main Heading */}
-          <div className="relative mt-90">
+          <div className="relative mt-16 sm:mt-24 md:mt-32 lg:mt-90">
             <div className="mb-4">
               <p className="text-p2 text-black text-left uppercase" data-reveal-text>
                 [ SOFTWARE ENGINEER ]
               </p>
             </div>
-            <h1 className="text-black uppercase font-light leading-normal whitespace-nowrap" data-reveal-text>
+            <h1 className="text-black uppercase font-light leading-tight sm:leading-normal" data-reveal-text>
               DEVELOPING EXPERIENCES
             </h1>
-            <h1 className="text-black uppercase font-light leading-normal pl-[356px] -mt-4" data-reveal-text>
+            <h1 className="text-black uppercase font-light leading-tight sm:leading-normal sm:pl-8 md:pl-16 lg:pl-[356px] sm:-mt-2 md:-mt-4" data-reveal-text>
               CREATING WITH VISION
             </h1>
-            <div className="mt-6 flex gap-8 items-center">
+            <div className="mt-6 flex flex-wrap gap-4 sm:gap-8 items-center">
                 <p className="text-p2 text-black uppercase" data-reveal-text>
                   SHEM K. N
                 </p>

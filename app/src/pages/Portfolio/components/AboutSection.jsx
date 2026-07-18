@@ -2,9 +2,9 @@ import RevealText from '../../../components/RevealText';
 
 function AboutSection() {
   return (
-    <section className="bg-black py-24 px-8">
+    <section className="bg-black py-12 sm:py-16 md:py-24 px-4 sm:px-8">
       <div className="max-w-[1728px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
           {/* Bio Text */}
           <RevealText className="text-h4 text-white leading-normal uppercase">
             <p className="mb-4" data-reveal-text>HI,</p>
@@ -23,12 +23,12 @@ function AboutSection() {
           </RevealText>
 
           {/* Avatar */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="w-[530px] h-[530px] rounded-full border border-white bg-gray-700" >
+          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <div className="w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[530px] lg:h-[530px] rounded-full border border-white bg-gray-700" >
               <img 
                 src="https://res.cloudinary.com/dcoilkm8r/image/upload/v1784234458/SK_avatar_xlnmhz.png" 
                 alt="Avatar" 
-                className="w-full h-full rounded-full" 
+                className="w-full h-full rounded-full object-cover" 
               />
             </div>
           </div>

@@ -23,15 +23,15 @@ const projects = [
 
 function ProjectsSection() {
   return (
-    <section className="bg-[#020108] py-24 px-8">
-      <div className="max-w-[1728px] mx-auto space-y-24">
+    <section className="bg-[#020108] py-12 sm:py-16 md:py-24 px-4 sm:px-8">
+      <div className="max-w-[1728px] mx-auto space-y-12 sm:space-y-16 md:space-y-24">
         {projects.map((project, index) => {
           const isEven = index % 2 === 0;
           
           return (
-            <div key={project.title} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div key={project.title} className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               {/* Image - Left side for even indices, right side for odd */}
-              <div className={`h-[450px] transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-1 ${isEven ? '' : 'lg:order-2'}`}>
+              <div className={`h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-1 ${isEven ? '' : 'lg:order-2'}`}>
                 <HoverFadeImage 
                   images={project.images}
                   alt={`${project.title} project screenshots`}
@@ -41,7 +41,7 @@ function ProjectsSection() {
               
               {/* Content - Right side for even indices, left side for odd */}
               <RevealText className={`text-white ${isEven ? '' : 'lg:order-1'}`}>
-                <div className="flex items-baseline gap-4 mb-8">
+                <div className="flex flex-wrap items-baseline gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <h2 className="uppercase" data-reveal-text>
                     {project.title}
                   </h2>
@@ -63,9 +63,9 @@ function ProjectsSection() {
                 </p>
                 <div className="text-p2 uppercase">
                   <p className="text-p2 mb-2" data-reveal-text>TECH STACK:</p>
-                  <ul className="ml-8 space-y-1 list-none">
+                  <ul className="ml-4 sm:ml-8 space-y-1 list-none">
                     {project.techStack.map((tech) => (
-                      <li key={tech} className="pl-6" data-reveal-text>-- {tech}</li>
+                      <li key={tech} className="pl-4 sm:pl-6" data-reveal-text>-- {tech}</li>
                     ))}
                   </ul>
                 </div>
