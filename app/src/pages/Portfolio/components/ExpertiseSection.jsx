@@ -1,7 +1,7 @@
 import RevealText from '../../../components/RevealText';
 
 const expertise = [
-  'DATABASE MANAGEMENT',
+  'DATABASES',
   'APP DEVELOPMENT',
   'SYSTEM ARCHITECTURE',
   'WEB DEVELOPMENT',
@@ -30,7 +30,7 @@ function ExpertiseSection() {
         <RevealText>
           <h2 className="text-p2 font-bold text-black mb-8 sm:mb-12 text-center" data-reveal-text>[ SKILLSET ]</h2>
           {/* Grid layout for mobile/tablet */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-6 mt-8 sm:mt-12 lg:hidden">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-32 mt-12 lg:hidden">
             {expertise.map((item) => (
               <p
                 key={item}
