@@ -14,6 +14,7 @@ export const footerConfig = {
     social: [
       { label: 'INSTAGRAM', url: 'https://instagram.com' },
       { label: 'LINKEDIN', url: 'https://linkedin.com' },
+      { label: 'GITHUB', url: 'https://github.com' },
     ],
   },
   backToTopLabel: '[ BACK TO TOP ]',
