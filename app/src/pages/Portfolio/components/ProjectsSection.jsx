@@ -28,7 +28,7 @@ const projects = [
     images: projectPlaceholders.aitc,
   },
   {
-    title: 'FO Perpsectives',
+    title: 'FO P.',
     description: 'REACT APP, CAREERS PLATFORM',
     role: 'ROLE: WEB DESIGN, FULL-STACK',
     techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES', 'CLOUDFLARE'],
