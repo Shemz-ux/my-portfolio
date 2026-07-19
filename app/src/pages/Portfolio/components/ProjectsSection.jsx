@@ -47,7 +47,7 @@ function ProjectsSection() {
           return (
             <div key={project.title} className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               {/* Image - Left side for even indices, right side for odd */}
-              <div className={`h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-1 ${isEven ? '' : 'lg:order-2'}`}>
+              <div className={`w-full aspect-[1.84/1] transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-1 ${isEven ? '' : 'lg:order-2'}`}>
                 <HoverFadeImage 
                   images={project.images}
                   alt={`${project.title} project screenshots`}

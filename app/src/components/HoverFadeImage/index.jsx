@@ -35,7 +35,7 @@ function HoverFadeImage({ images, alt = 'Project image', className = '' }) {
           key={index}
           src={image}
           alt={`${alt} ${index + 1}`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain"
           style={{
             opacity: currentIndex === index ? 1 : 0,
             transition: prefersReducedMotion

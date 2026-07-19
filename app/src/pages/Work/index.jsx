@@ -259,7 +259,7 @@ function Work() {
               >
                 {/* Project Image */}
                 <div
-                  className="h-[280px] sm:h-[350px] md:h-[400px] lg:h-[466px] w-full transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-1"
+                  className="w-full aspect-[1.84/1] transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-1"
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >

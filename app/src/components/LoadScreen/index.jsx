@@ -21,31 +21,33 @@ function LoadScreen({ onComplete }) {
     if (!hasShown) {
       setShouldShow(true);
       sessionStorage.setItem(STORAGE_KEY, 'true');
-      
-      const ctx = gsap.context(() => {
-        const tl = gsap.timeline({
-          onComplete: () => {
-            setTimeout(() => {
-              exitAnimation();
-            }, HOLD_DURATION * 1000);
-          }
-        });
-
-        tl.to(percentageRef.current, {
-          value: 100,
-          duration: LOAD_DURATION,
-          ease: 'power2.inOut',
-          onUpdate: () => {
-            setPercentage(Math.floor(percentageRef.current.value));
-          }
-        });
-      });
-
-      return () => ctx.revert();
     } else {
       onComplete?.();
     }
   }, [onComplete]);
+
+  useEffect(() => {
+    if (!shouldShow) return;
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        setTimeout(() => {
+          exitAnimation();
+        }, HOLD_DURATION * 1000);
+      }
+    });
+
+    tl.to(percentageRef.current, {
+      value: 100,
+      duration: LOAD_DURATION,
+      ease: 'power2.inOut',
+      onUpdate: () => {
+        setPercentage(Math.floor(percentageRef.current.value));
+      }
+    });
+
+    return () => tl.kill();
+  }, [shouldShow]);
 
   const exitAnimation = () => {
     if (!overlayRef.current) return;

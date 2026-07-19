@@ -35,6 +35,5 @@ export const projectPlaceholders = {
     'https://res.cloudinary.com/dcoilkm8r/image/upload/v1784458407/Screenshot_2026-07-19_at_11.50.40_rkgugs.png',
     'https://res.cloudinary.com/dcoilkm8r/image/upload/v1784458296/Screenshot_2026-07-19_at_11.51.13_rabtac.png',
     'https://res.cloudinary.com/dcoilkm8r/image/upload/v1784458237/Screenshot_2026-07-19_at_11.47.24_mseoim.png',
-
   ],
 };
