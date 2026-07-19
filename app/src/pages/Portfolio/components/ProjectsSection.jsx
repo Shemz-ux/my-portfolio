@@ -5,25 +5,25 @@ import { projectPlaceholders } from '../../../assets/images/placeholders';
 const projects = [
   {
     title: 'OC',
-    description: 'REACT APP, PROFESSIONAL DEVELOPMENT PLATFORM',
-    role: 'ROLE: WEB DESIGN, FULL-STACK',
-    techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES'],
+    description: 'REACT APP, L&D CONSULTANCY',
+    role: 'ROLE: WEB DESIGN, API DESIGN, DATABASE DESIGN',
+    techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'MONGODB'],
     url: '#', // Replace with actual project URL
     images: projectPlaceholders.oc,
   },
   {
     title: 'Studio',
-    description: 'REACT APP, PROFESSIONAL DEVELOPMENT PLATFORM',
-    role: 'ROLE: WEB DESIGN, FULL-STACK',
-    techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES'],
+    description: 'STUDIO BOOKING PLATFORM',
+    role: 'ROLE: UI/UX DESIGN, PROTOTYPING',
+    techStack: ['FIGMA', 'EXCALIDRAW'],
     url: '#', // Replace with actual project URL
     images: projectPlaceholders.studio,
   },
   {
     title: 'AITC',
-    description: 'REACT APP, PROFESSIONAL DEVELOPMENT PLATFORM',
+    description: 'REACT APP, PROFESSIONAL DEVELOPMENT',
     role: 'ROLE: WEB DESIGN, FULL-STACK',
-    techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES'],
+    techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS'],
     url: '#', // Replace with actual project URL
     images: projectPlaceholders.aitc,
   },
