@@ -51,7 +51,7 @@ function ProjectsSection() {
                 <HoverFadeImage 
                   images={project.images}
                   alt={`${project.title} project screenshots`}
-                  className="bg-[#f3f3f3]"
+                  className="bg-black"
                 />
               </div>
               

@@ -266,7 +266,7 @@ function Work() {
                   <HoverFadeImage
                     images={project.images}
                     alt={`${project.title} screenshots`}
-                    className="bg-[#d9d9d9]"
+                    className="bg-black"
                   />
                 </div>
 

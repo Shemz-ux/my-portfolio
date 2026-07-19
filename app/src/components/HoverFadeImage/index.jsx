@@ -15,7 +15,7 @@ function HoverFadeImage({ images, alt = 'Project image', className = '' }) {
 
   if (!images || images.length === 0) {
     return (
-      <div className={`relative w-full h-full bg-[#f3f3f3] ${className}`}>
+      <div className={`relative w-full h-full bg-black ${className}`}>
         <div className="absolute inset-0 flex items-center justify-center text-gray-400">
           No images
         </div>
