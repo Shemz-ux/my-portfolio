@@ -15,7 +15,7 @@ function TechnologiesSection() {
           <p className="text-p2 text-black mb-4 uppercase" data-reveal-text>
             TECHNOLOGIES
           </p>
-          <div className="border-t border-black mb-12 sm:mb-16 md:mb-24" />
+          <div className="border-t border-black/20 mb-12 sm:mb-16 md:mb-24" />
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-x-8 sm:gap-x-16 md:gap-x-32 lg:gap-x-64 gap-y-12 sm:gap-y-16 md:gap-y-24 text-center">
             {technologies.flat().map((tech) => (

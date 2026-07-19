@@ -19,7 +19,7 @@ function Services() {
             <h1 className="text-h2 font-light mb-4 uppercase tracking-tight" data-reveal-text>
               SERVICES
             </h1>
-            <div className="w-full h-[0.5px] bg-black"></div>
+            <div className="border-t border-black/20"></div>
           </div>
         </RevealText>
 
@@ -50,7 +50,7 @@ function Services() {
                     </p>
                   </div>
                   {index < services.length - 1 && (
-                    <div className="w-full h-[0.5px] bg-black"></div>
+                    <div className="border-t border-black/20"></div>
                   )}
                 </div>
               ))}

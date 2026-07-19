@@ -124,7 +124,7 @@ function Contact() {
                         key={option.value}
                         type="button"
                         onClick={() => setSelectedBudget(option.value)}
-                        className={`border border-black/36 px-4 sm:px-5 py-2 sm:py-1 text-p2 uppercase transition-all min-h-[44px] ${
+                        className={`border border-black/20 px-4 sm:px-5 py-2 sm:py-1 text-p2 uppercase transition-all min-h-[44px] ${
                           selectedBudget === option.value
                             ? 'bg-black text-white'
                             : 'bg-transparent text-black hover:bg-black/5'
