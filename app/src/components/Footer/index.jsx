@@ -32,9 +32,12 @@ function Footer() {
             <h2 className="text-h2 text-white uppercase">
               {footerConfig.heading}
             </h2>
-            <span className="text-p2 text-white uppercase whitespace-nowrap">
+            <Link 
+              to="/contact" 
+              className="text-p2 text-white uppercase whitespace-nowrap hover:opacity-60 transition-opacity cursor-pointer"
+            >
               {footerConfig.contactLabel}
-            </span>
+            </Link>
           </div>
         </div>
 
@@ -56,7 +59,7 @@ function Footer() {
           {/* Contact Info */}
           <div className="text-white mt-0 sm:mt-16 md:mt-35 lg:text-right space-y-1 uppercase">
             <p className="text-p2">{footerConfig.contactInfo.email}</p>
-            <p className="text-p2">{formatTime()} GMT</p>
+            <p className="text-p2">{formatTime()} BST</p>
             <p className="text-p2">{footerConfig.contactInfo.location}</p>
             <div className="mt-6 sm:mt-8 flex flex-wrap gap-6 sm:gap-8 lg:justify-end">
               {footerConfig.contactInfo.social.map((platform) => (
@@ -78,7 +81,7 @@ function Footer() {
         <div className="text-center">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-p2 text-white hover:opacity-60 transition-opacity uppercase min-h-[44px] px-4 py-2"
+            className="text-p2 text-white hover:opacity-60 transition-opacity uppercase min-h-[44px] px-4 py-2 cursor-pointer"
           >
             {footerConfig.backToTopLabel}
           </button>
