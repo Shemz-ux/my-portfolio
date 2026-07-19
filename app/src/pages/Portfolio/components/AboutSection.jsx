@@ -9,7 +9,7 @@ function AboutSection() {
           <RevealText className="text-white leading-relaxed">
             <div className="space-y-6 sm:space-y-8">
               <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light" data-reveal-text>
-                I'm Shem, founder of SD Atelier, a digital agency delivering full-stack solutions from UI/UX design to APIs, and databases, across both web and app development.
+                I'm Shem, founder of SD Studios, a digital agency delivering full-stack solutions from UI/UX design to APIs, and databases, across both web and app development.
               </p>
               
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-300" data-reveal-text>
@@ -24,7 +24,7 @@ function AboutSection() {
 
           {/* Avatar */}
           <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
-            <div className="w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[530px] lg:h-[530px] rounded-full border border-white bg-gray-700" >
+            <div className="w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[530px] lg:h-[530px] rounded-full border-[0.5px] border-white bg-gray-400 transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]" >
               <img 
                 src="https://res.cloudinary.com/dcoilkm8r/image/upload/v1784234458/SK_avatar_xlnmhz.png" 
                 alt="Avatar" 

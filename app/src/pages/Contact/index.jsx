@@ -115,7 +115,7 @@ function Contact() {
               <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
                 {/* Budget Section */}
                 <div className="mb-6 sm:mb-8">
-                  <h3 className="text-center text-black/36 uppercase mb-4 sm:mb-6">
+                  <h3 className="text-center text-black/36 uppercase mb-4 sm:mb-6 text-p1">
                     BUDGET
                   </h3>
                   <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
@@ -124,7 +124,7 @@ function Contact() {
                         key={option.value}
                         type="button"
                         onClick={() => setSelectedBudget(option.value)}
-                        className={`border border-black px-4 sm:px-5 py-2 sm:py-1 text-p2 uppercase transition-all min-h-[44px] ${
+                        className={`border border-black/36 px-4 sm:px-5 py-2 sm:py-1 text-p2 uppercase transition-all min-h-[44px] ${
                           selectedBudget === option.value
                             ? 'bg-black text-white'
                             : 'bg-transparent text-black hover:bg-black/5'
@@ -138,15 +138,17 @@ function Contact() {
 
                 {/* Project Details Section */}
                 <div className="flex-1 flex flex-col">
-                  <h3 className="text-center text-black/36 uppercase mb-6">
+                  <h3 className="text-center text-black/36 uppercase mb-4 sm:mb-6 text-p1">
                     PROJECT DETAILS
                   </h3>
-                  <textarea
-                    value={projectDetails}
-                    onChange={(e) => setProjectDetails(e.target.value)}
-                    className="flex-1 w-full bg-transparent border-b border-black/20 pb-3 text-black text-p2 placeholder:text-black/20 focus:outline-none focus:border-black transition-colors resize-none"
-                    placeholder=""
-                  />
+                  <div className="flex-1 border border-black/20 rounded-lg p-4 sm:p-6">
+                    <textarea
+                      value={projectDetails}
+                      onChange={(e) => setProjectDetails(e.target.value)}
+                      className="w-full h-full min-h-[150px] sm:min-h-[200px] bg-transparent text-black text-p2 placeholder:text-black/30 focus:outline-none resize-none leading-relaxed"
+                      placeholder="Tell us about your project... What are your goals? What services do you need? Any specific requirements or ideas you'd like to share?"
+                    />
+                  </div>
                 </div>
 
                 {/* Send Button */}

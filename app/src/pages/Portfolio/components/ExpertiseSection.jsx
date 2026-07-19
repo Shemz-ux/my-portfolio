@@ -8,19 +8,19 @@ const expertise = [
   'UX DESIGN',
   'APPLICATION INTERFACES',
   'ARTIFICIAL INTELLIGENCE',
-  'APPLICATION TESTING',
+  'E2E TESTING',
 ];
 
 // Random positioning classes for desktop organized chaos
 const randomPositions = [
   'lg:mt-0 lg:ml-0',
-  'lg:mt-16 lg:ml-20',
-  'lg:mt-6 lg:ml-14',
+  'lg:mt-20 lg:ml-20',
+  'lg:mt-0 lg:ml-14',
   'lg:mt-20 lg:ml-8',
   'lg:mt-12 lg:ml-24',
   'lg:mt-4 lg:ml-16',
   'lg:mt-6 lg:ml-54',
-  'lg:mt-10 lg:ml-95',
+  'lg:mt-6 lg:ml-95',
 ];
 
 function ExpertiseSection() {
