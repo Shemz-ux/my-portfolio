@@ -4,22 +4,22 @@ function AboutSection() {
   return (
     <section className="bg-black py-12 sm:py-16 md:py-24 px-4 sm:px-8">
       <div className="max-w-[1728px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Bio Text */}
-          <RevealText className="text-h4 text-white leading-normal uppercase">
-            <p className="mb-4" data-reveal-text>HI,</p>
-            <p className="mb-4" data-reveal-text>
-              "MY NAME IS SHEM THE
-              <br />
-              FOUNDER OF SD ATELIER A DIGITAL
-            </p>
-            <p className="mb-4" data-reveal-text>AGENCY THAT SPECIALISES IN</p>
-            <p className="mb-4" data-reveal-text>WEB DESIGN AND APP</p>
-            <p className="mb-4" data-reveal-text>DEVELOPMENT, I HAVE AN EXTENSIVE</p>
-            <p className="mb-4" data-reveal-text>BACKGROUND ENGINEERING WITH A</p>
-            <p className="mb-4" data-reveal-text>LOVE FOR DESIGN. WHEN I AM NOT</p>
-            <p className="mb-4" data-reveal-text>CREATING SOLUTIONS I WORK AS A</p>
-            <p data-reveal-text>SOFTWARE DEVELOPER FULL TIME."</p>
+          <RevealText className="text-white leading-relaxed">
+            <div className="space-y-6 sm:space-y-8">
+              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light" data-reveal-text>
+                I'm Shem, founder of SD Atelier, a digital agency delivering full-stack solutions from UI/UX design to APIs, and databases, across both web and app development.
+              </p>
+              
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-300" data-reveal-text>
+                With an engineering background and a genuine love for design, I bring both precision and vision to every project.
+              </p>
+              
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-400" data-reveal-text>
+                By day, I work full-time as a software developer. When I'm not building solutions there, I'm creating them here.
+              </p>
+            </div>
           </RevealText>
 
           {/* Avatar */}
