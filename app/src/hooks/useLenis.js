@@ -11,10 +11,15 @@ export const useLenis = () => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isTouch = isTouchDevice();
 
+    // Don't initialize Lenis at all on touch devices to prevent scroll conflicts
+    if (isTouch || prefersReducedMotion) {
+      return;
+    }
+
     const lenis = new Lenis({
       lerp: 0.1,
       duration: 1.2,
-      smoothWheel: !prefersReducedMotion && !isTouch,
+      smoothWheel: true,
       smoothTouch: false,
       wrapper: window,
       content: document.documentElement,

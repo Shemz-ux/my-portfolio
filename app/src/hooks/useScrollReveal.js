@@ -16,6 +16,7 @@ export const useScrollReveal = (options = {}) => {
   const containerRef = useRef(null);
   const splitInstancesRef = useRef([]);
   const scrollTriggerRef = useRef(null);
+  const hasAnimatedRef = useRef(false);
   const prefersReducedMotion = useRef(
     typeof window !== 'undefined'
       ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -99,7 +100,9 @@ export const useScrollReveal = (options = {}) => {
         trigger: container,
         start: triggerStart,
         once: true,
+        ignoreMobileResize: true,
         onEnter: () => {
+          hasAnimatedRef.current = true;
           gsap.to(allWords, {
             y: 0,
             opacity: 1,
@@ -118,8 +121,46 @@ export const useScrollReveal = (options = {}) => {
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        setupSplitText();
-        ScrollTrigger.refresh();
+        if (hasAnimatedRef.current) {
+          // Animation already fired - only update SplitText layout, don't recreate trigger
+          splitInstancesRef.current.forEach((split) => {
+            if (split && split.revert) {
+              split.revert();
+            }
+          });
+          splitInstancesRef.current = [];
+
+          const textElements = container.querySelectorAll('[data-reveal-text]');
+          textElements.forEach((element) => {
+            const split = new SplitType(element, {
+              types: 'lines,words',
+              tagName: 'span',
+            });
+            splitInstancesRef.current.push(split);
+
+            if (split.lines) {
+              split.lines.forEach((line) => {
+                gsap.set(line, { display: 'block' });
+              });
+            }
+
+            if (split.words) {
+              split.words.forEach((word) => {
+                gsap.set(word, {
+                  display: 'inline-block',
+                  y: 0,
+                  opacity: 1,
+                });
+              });
+            }
+          });
+
+          ScrollTrigger.refresh();
+        } else {
+          // Animation hasn't fired yet - recreate everything
+          setupSplitText();
+          ScrollTrigger.refresh();
+        }
       }, 250);
     };
 
