@@ -40,16 +40,18 @@ function Hero() {
               CREATING WITH VISION
             </h1>
             <div className="mt-6 flex flex-wrap gap-4 sm:gap-8 items-center">
-                <p className="text-p2 text-black uppercase" data-reveal-text>
-                  SHEM K. N
-                </p>
-                <p className="text-p2" data-reveal-text>{formatTime()} GMT</p>
-              </div>
-            <div>
-              <p className="text-p2 text-black text-right uppercase" data-reveal-text>
-                [ DIGITAL DESIGNER ]
+              <p className="text-p2 text-black uppercase" data-reveal-text>
+                SHEM K. N
               </p>
+              <p className="text-p2">{formatTime()} BST</p>
             </div>
+          </div>
+        </RevealText>
+        <RevealText>
+          <div>
+            <p className="text-p2 text-black text-right uppercase" data-reveal-text>
+              [ DIGITAL DESIGNER ]
+            </p>
           </div>
         </RevealText>
       </div>

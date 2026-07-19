@@ -9,7 +9,7 @@ export const footerConfig = {
   ],
   contactInfo: {
     email: 'SDSTUDIOS.CO.UK@GMAIL.COM',
-    timezone: 'TIME ZONE - GMT',
+    timezone: 'TIME ZONE - BST',
     location: 'LONDON',
     social: [
       { label: 'INSTAGRAM', url: 'https://instagram.com' },
