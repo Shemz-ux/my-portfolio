@@ -12,9 +12,9 @@ export const footerConfig = {
     timezone: 'TIME ZONE - BST',
     location: 'LONDON',
     social: [
-      { label: 'INSTAGRAM', url: 'https://instagram.com' },
-      { label: 'LINKEDIN', url: 'https://linkedin.com' },
-      { label: 'GITHUB', url: 'https://github.com' },
+      { label: 'INSTAGRAM', url: 'https://www.instagram.com/sdstudios.co/' },
+      { label: 'LINKEDIN', url: 'https://www.linkedin.com/in/shemaiahnguessan/' },
+      { label: 'GITHUB', url: 'https://github.com/Shemz-ux' },
     ],
   },
   backToTopLabel: '[ BACK TO TOP ]',
