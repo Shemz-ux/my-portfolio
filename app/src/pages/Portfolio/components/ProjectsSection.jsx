@@ -4,6 +4,22 @@ import { projectPlaceholders } from '../../../assets/images/placeholders';
 
 const projects = [
   {
+    title: 'OC',
+    description: 'REACT APP, PROFESSIONAL DEVELOPMENT PLATFORM',
+    role: 'ROLE: WEB DESIGN, FULL-STACK',
+    techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES'],
+    url: '#', // Replace with actual project URL
+    images: projectPlaceholders.oc,
+  },
+  {
+    title: 'Studio',
+    description: 'REACT APP, PROFESSIONAL DEVELOPMENT PLATFORM',
+    role: 'ROLE: WEB DESIGN, FULL-STACK',
+    techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES'],
+    url: '#', // Replace with actual project URL
+    images: projectPlaceholders.studio,
+  },
+  {
     title: 'AITC',
     description: 'REACT APP, PROFESSIONAL DEVELOPMENT PLATFORM',
     role: 'ROLE: WEB DESIGN, FULL-STACK',

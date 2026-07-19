@@ -33,18 +33,18 @@ const projects = [
   },
   {
     id: 4,
-    title: 'WEBSITE 4',
-    tech: 'NEXT JS, TYPESCRIPT, PRISMA, VERCEL',
-    description: 'SAAS APPLICATION',
-    images: projectPlaceholders.workProject2,
+    title: 'STUDIO',
+    tech: 'FIGMA PROTOTYPING',
+    description: 'WEB DESIGN',
+    images: projectPlaceholders.studio,
   },
   {
     id: 5,
-    title: 'WEBSITE 5',
-    tech: 'REACT NATIVE, FIREBASE, EXPO',
-    description: 'MOBILE APP DEVELOPMENT',
-    images: projectPlaceholders.oc,
-  },
+    title: 'WARHEADS',
+    tech: 'JAVASCRIPT, HTML, CSS',
+    description: 'UI/UX DESIGN, GAME DEVELOPMENT, ARTIFICIAL INTELLIGENCE',
+    images: projectPlaceholders.warHeads,
+  }
 ];
 
 function Work() {
@@ -259,7 +259,7 @@ function Work() {
               >
                 {/* Project Image */}
                 <div
-                  className="h-[280px] sm:h-[350px] md:h-[400px] lg:h-[466px] w-full transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-1"
+                  className="h-[280px] sm:h-[350px] md:h-[400px] lg:h-[466px] w-full transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-1"
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
