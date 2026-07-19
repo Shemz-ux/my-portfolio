@@ -8,7 +8,7 @@ const projects = [
     description: 'REACT APP, L&D CONSULTANCY',
     role: 'ROLE: WEB DESIGN, API DESIGN, DATABASE DESIGN',
     techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'MONGODB'],
-    url: '#', // Replace with actual project URL
+    url: 'https://opportunitycentral-app.vercel.app/', // Replace with actual project URL
     images: projectPlaceholders.oc,
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     description: 'STUDIO BOOKING PLATFORM',
     role: 'ROLE: UI/UX DESIGN, PROTOTYPING',
     techStack: ['FIGMA', 'EXCALIDRAW'],
-    url: '#', // Replace with actual project URL
+    url: 'https://www.figma.com/make/tES61YQdjJTJnXbTXj558H/Studio-Booking-Website-Design?code-node-id=0-9&p=f&t=4pHIQQZg67geGZTk-0&fullscreen=1', // Replace with actual project URL
     images: projectPlaceholders.studio,
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     description: 'REACT APP, PROFESSIONAL DEVELOPMENT',
     role: 'ROLE: WEB DESIGN, FULL-STACK',
     techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS'],
-    url: '#', // Replace with actual project URL
+    url: 'https://www.aitc.network/', // Replace with actual project URL
     images: projectPlaceholders.aitc,
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     description: 'REACT APP, CAREERS PLATFORM',
     role: 'ROLE: WEB DESIGN, FULL-STACK',
     techStack: ['REACT.JS', 'NODE.JS', 'EXPRESS.JS', 'POSTGRES', 'CLOUDFLARE'],
-    url: '#', // Replace with actual project URL
+    url: 'https://www.foperspectives.co.uk/', // Replace with actual project URL
     images: projectPlaceholders.foPerspectives,
   },
 ];
